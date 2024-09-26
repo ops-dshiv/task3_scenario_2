@@ -59,6 +59,8 @@ services:
     volumes:
     - ./kafka1:/etc/kafka
     - ./jmx-exporter:/usr/share/jmx-exporter
+    - ./config/kafka:/etc/kafka/config   # <-- Add this line
+
     deploy:
       resources:
         limits:
@@ -178,6 +180,8 @@ services:
       - kafka3
     volumes:
     - ./client:/opt/client
+    - ./config/kafka:/etc/kafka/config   # <-- Add this line
+
     deploy:
       resources:
         limits:
